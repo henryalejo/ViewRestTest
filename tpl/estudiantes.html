@@ -18,10 +18,14 @@
                             <td> {{estudiante.telefono}}</td>
                             <td>
                                 <table>
-                                <tr>
-                                    <button ng-Click="openEdit(estudiante)" class="btn btn btn-info ">Editar</button>                                    
-                                    <button class="btn btn-danger" ng-click="deleteStudent(estudiante.id)" >Eliminar</button>
-                                    <button class="btn btn-success" ng-click="" >Asignaturas</button>
+                                <tr>    
+                                    <td>
+                                        <button ng-Click="openEdit(estudiante)" class="btn btn btn-info ">Editar</button>                                    
+                                        <button class="btn btn-danger" ng-click="deleteStudent(estudiante.id)" >Eliminar</button>
+                                    </td>
+                                    <td class="well well-sm">Asignaturas Inscritas <span class="badge">{{(estudiante.signatures.length >0)?estudiante.signatures.length: 0 }}</span>
+                                        <button ng-click="openSignatureManager(estudiante)" class="btn btn-warning" ng-click="" >Ver/Inscribir/Cancelar</button>
+                                    </td>
 
                                 </tr>
                                 
