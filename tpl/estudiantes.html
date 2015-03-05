@@ -1,0 +1,42 @@
+
+		<table class="table table-striped">
+			<thead>
+				<th>Id</th>
+				<th>Nombre</th>
+				<th>Edad</th>
+                                <th>Teléfono</th>
+				<th>Acciones</th>
+			</thead>
+			<tr  ng-repeat="estudiante in estudiantes">
+                            
+                        
+                            
+                        
+                            <td> {{estudiante.id}}</td>
+                            <td> {{estudiante.nombre}}</td>
+                            <td> {{estudiante.edad}}</td>
+                            <td> {{estudiante.telefono}}</td>
+                            <td>
+                                <table>
+                                <tr>
+                                    <button ng-Click="openEdit(estudiante)" class="btn btn btn-info ">Editar</button>                                    
+                                    <button class="btn btn-danger" ng-click="deleteStudent(estudiante.id)" >Eliminar</button>
+                                    <button class="btn btn-success" ng-click="" >Asignaturas</button>
+
+                                </tr>
+                                
+                                </table>   
+                            </td>
+                          
+                        
+			</tr>
+			
+		</table>
+<button class="btn btn-success" ng-click="openNew()">Adicionar</button>
+
+
+<!-- Modal nuevo estudiante -->
+    
+
+<!-- Fin modal nuevo estudiante-->
+

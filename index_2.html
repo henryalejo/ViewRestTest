@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="bower_components/jquery/jquery.min.js"></script>
+        <script>
+            
+            var estudiante;
+            var host = 'http://localhost:8080/WebServiceRest/webresources/';
+            var jContent = $( "#content" );
+            var jLink = $( this );
+            var getdatos = function (){
+                
+                //$.getJSON('?',function (data){  estudiante=data;});
+                
+                    $.ajax(
+                             {
+                                // The link we are accessing.
+                                url: host + "com.servicio.estudiante",
+                                // The type of request.
+                                type: "get",
+                                // The type of data that is getting returned.
+                                dataType: "JSON",
+                                error: function(){
+                                    ShowStatus( "AJAX - error()" );
+                                    // Load the content in to the page.
+                                    jContent.html( "<p>Page Not Found!!</p>" );
+                                },
+                                beforeSend: function(){
+                                    //ShowStatus( "AJAX - beforeSend()" );
+                                },
+                                complete: function(){
+                                    //ShowStatus( "AJAX - complete()" );
+                                },
+                                success: function( strData ){
+                                   // ShowStatus( "AJAX - success()" );
+                                    // Load the content in to the page.
+                                    console.log(strData);
+                                    jContent.html( strData );
+                                }
+                             }							
+                             );
+            };
+            
+            
+            
+        </script>
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <button onclick="getdatos()">Hola get</button>
+        <div class="result" id="result"></div>
+        <div id="content" ></div>
+    </body>
+</html>

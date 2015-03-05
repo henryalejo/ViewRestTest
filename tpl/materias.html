@@ -1,0 +1,19 @@
+
+		<table class="table table-striped">
+                    <thead class="panel panel-default">
+				<th>Id</th>
+				<th>Materia</th>				
+				<th>Acciones</th>
+			</thead>
+			<tr ng-repeat="materia in materias ">
+				<td> {{materia.id}}</td>
+				<td> {{materia.nombre}}</td>				
+				<td>
+                                    <button ng-Click="openEditSignature(materia)" class="btn btn btn-info ">Editar</button>
+                                    <button class="btn btn-danger" ng-Click="deleteSignature(materia.id)" >Eliminar</button>
+                                
+                                </td>
+			</tr>
+			
+		</table>
+<button class="btn btn-success" ng-click="openNew()">Adicionar</button>
