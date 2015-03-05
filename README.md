@@ -1,4 +1,4 @@
-# A simple student and signature manager in AangularJS
+# A simple student and signature manager in AngularJS
 
 
 This project has the backend RestAPI in https://github.com/henryalejo/ViewRestTest made with node.js/LoopBack
